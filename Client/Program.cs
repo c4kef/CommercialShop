@@ -22,7 +22,7 @@ namespace Client
 
                 if (Globals.m_sidClient.Length < 3)
                 {
-                    Globals.Log(new Exception("Can't get client's SID..."));
+                    Globals.Log(new Exception("Can't get client's SID."));
                     Environment.Exit(0);
                 }
 
