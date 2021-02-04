@@ -1,0 +1,14 @@
+<project outputDir="D:\Projects\CommercialShop\Build\Compiled\Confused" baseDir="D:\Projects\CommercialShop\Build\Compiled" xmlns="http://confuser.codeplex.com">
+  <rule pattern="true" inherit="false" />
+  <module path="..\DFGames.exe">
+    <rule pattern="true" preset="maximum">
+      <protection id="anti dump" />
+      <protection id="anti debug" />
+      <protection id="anti ildasm" />
+      <protection id="anti tamper" />
+      <protection id="ctrl flow" />
+      <protection id="constants" />
+      <protection id="anti dump" />
+    </rule>
+  </module>
+</project>

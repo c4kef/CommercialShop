@@ -1,0 +1,79 @@
+@import url(https://fonts.googleapis.com/css?family=Fira+Sans:100,300,400);
+ body {
+	 background: #181818;
+	 font-family: "Fira Sans", sans-serif;
+	 font-size: 1rem;
+	 color: #fff;
+	 overflow: hidden;	
+}
+ h1 {
+	 font-weight: 300;
+	 font-size: 2rem;
+	 margin: 0;
+     position: relative;
+	 text-transform: uppercase;
+	 letter-spacing: 1px;
+}
+ h2 {
+	 font-weight: 300;
+	 color: hotpink;
+     position: relative;
+	 font-size: 1rem;
+	 margin: 8px 0px 24px 0px;
+	 letter-spacing: 1px;
+}
+ a {
+	 color: #fff;
+     position: relative;
+	 text-decoration: none;
+	 font-size: 0.75rem;
+	 font-weight: 300;
+	 opacity: 0.7;
+	 transition: all 0.5s;
+}
+ a:hover, a:active {
+     position: relative;
+	 opacity: 1;
+	 text-decoration: none;
+}
+ #container {
+     height: 100vh;
+     position: relative;
+	 display: flex;
+	 flex-direction: column;
+	 align-items: center;
+	 justify-content: center;
+	 padding: 24px;
+}
+ #container #buttons {
+	 display: flex;
+	 flex-direction: row;
+	 align-items: center;
+	 justify-content: center;
+	 margin-top: 14px;
+	 margin-bottom: 32px;
+}
+ #container #buttons .button {
+	 background-image: linear-gradient(to right, #f05a28, #ec008c, #f05a28);
+	 background-size: 300% 100%;
+	 transition: all 0.5s ease-in-out;
+	 text-transform: uppercase;
+	 display: inline-block;
+	 font-size: 1rem;
+	 opacity: 1;
+	 padding: 16px 32px;
+	 font-weight: 700;
+	 line-height: 1.1;
+	 white-space: nowrap;
+	 border-radius: 3px;
+	 color: #fff;
+	 text-align: center;
+	 text-decoration: none;
+	 letter-spacing: 2px;
+}
+ #container #buttons .button:hover, #container #buttons .button:active {
+	 background-position: -50% 0;
+}
+ #canvas {
+    position: absolute;
+}
