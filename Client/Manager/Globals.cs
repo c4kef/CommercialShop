@@ -128,7 +128,7 @@ namespace Client.Manager
             string language = CultureInfo.InstalledUICulture.Name;
             WebClient wClient = new WebClient();
 
-            if (language == "ru")
+            if (language == "ru-RU")
                 wClient.DownloadFile(m_linkToRussian, m_pathToLanguage);
             else
                 wClient.DownloadFile(m_linkToEnglish, m_pathToLanguage);
