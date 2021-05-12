@@ -26,11 +26,9 @@ namespace Client.Manager
 
         public static SQLRequests m_sqlRequests;
 
-        public static Image m_logoApp;
-
         public static string m_versionServer = "Vers_2.0.0S";
         public static string m_versionLanguage = "Vers_1.0.0R";
-        public static string m_linkServer = "https://xremote.000webhostapp.com";
+        public static string m_linkServer = "https://darkdenuvo.online";
         public static string m_linkVersion = $"{Globals.m_linkServer}/version_check.php";
         public static string m_linkKeyCheck = $"{Globals.m_linkServer}/key_check.php";
 
@@ -60,10 +58,6 @@ namespace Client.Manager
                 goto Admin;
 
             //Main
-            Main.GetInstance().toolTip.SetToolTip(Main.GetInstance().btnConnection, m_Interface.m_mainBtnTooltipConnection);
-            Main.GetInstance().toolTip.SetToolTip(Main.GetInstance().btnInfo, m_Interface.m_mainBtnTooltipInfo);
-            Main.GetInstance().toolTip.SetToolTip(Main.GetInstance().btnActivation, m_Interface.m_mainBtnTooltipActivation);
-            Main.GetInstance().toolTip.SetToolTip(Main.GetInstance().hideBtn, m_Interface.m_btnTooltipHide);
             Main.GetInstance().notify.BalloonTipText = m_Interface.m_mainBalloonTipText;
             Main.GetInstance().notify.BalloonTipTitle = m_Interface.m_mainBalloonTipTitle;
             Main.GetInstance().notify.Text = m_Interface.m_mainTooltipText;
@@ -89,7 +83,6 @@ namespace Client.Manager
                 goto Loading;
 
             //Admin
-            Admin.GetInstance().toolTip.SetToolTip(Admin.GetInstance().hideBtn, m_Interface.m_btnTooltipHide);
             Admin.GetInstance().Text = m_Interface.m_adminFormText;
 
             //Admin -> Account
@@ -128,7 +121,7 @@ namespace Client.Manager
             string language = CultureInfo.InstalledUICulture.Name;
             WebClient wClient = new WebClient();
 
-            if (language == "ru")
+            if (language == "ru-RU")
                 wClient.DownloadFile(m_linkToRussian, m_pathToLanguage);
             else
                 wClient.DownloadFile(m_linkToEnglish, m_pathToLanguage);

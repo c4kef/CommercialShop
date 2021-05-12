@@ -508,7 +508,33 @@ namespace Client.Manager
                         case "Microsoft":
                             foreach (var handle in new WindowControl(proces.MainWindowHandle).GetAllChildHandles())
                             {
-                                if (WinAPI.GetText(handle) == string.Empty || !(WinAPI.GetText(handle) == "Войти" || WinAPI.GetText(handle) == "Sign in"))
+                                if (WinAPI.GetText(handle) == string.Empty || !(
+                                    WinAPI.GetText(handle) == "Войти"
+                                    || WinAPI.GetText(handle) == "Sign in"
+                                    || WinAPI.GetText(handle) == "Кіру"
+                                    || WinAPI.GetText(handle) == "Вхід"
+                                    || WinAPI.GetText(handle) == "Увайсці"
+                                    || WinAPI.GetText(handle) == "Anmelden"
+                                    || WinAPI.GetText(handle) == "Oturum aç"
+                                    || WinAPI.GetText(handle) == "Iniciar sessão"
+                                    || WinAPI.GetText(handle) == "Accedi"
+                                    || WinAPI.GetText(handle) == "Iniciar sesión"
+                                    || WinAPI.GetText(handle) == "Se connecter"
+                                    || WinAPI.GetText(handle) == "Aanmelden"
+                                    || WinAPI.GetText(handle) == "登录"
+                                    || WinAPI.GetText(handle) == "登入"
+                                    || WinAPI.GetText(handle) == "Přihlásit se"
+                                    || WinAPI.GetText(handle) == "Logg på"
+                                    || WinAPI.GetText(handle) == "Logga in"
+                                    || WinAPI.GetText(handle) == "Zaloguj się"
+                                    || WinAPI.GetText(handle) == "Pierakstīties"
+                                    || WinAPI.GetText(handle) == "Sisselogimine"
+                                    || WinAPI.GetText(handle) == "로그인"
+                                    || WinAPI.GetText(handle) == "サインイン"
+                                    || WinAPI.GetText(handle) == "Conectare"
+                                    || WinAPI.GetText(handle) == "ลงชื่อเข้าใช้"
+                                    || WinAPI.GetText(handle) == "تسجيل الدخول"
+                                    ))
                                     continue;
 
                                 m_WindowHandle = handle;

@@ -86,6 +86,7 @@ namespace Client.UI.Other
                             awake1.Hide();
                             awake1.Dispose();
                         }));
+
                     transitionEnd = false;
                 }
                 catch (Exception ex)
@@ -130,12 +131,6 @@ namespace Client.UI.Other
             }
         }
 
-        private void btnActivation_Click(object sender, EventArgs e) => ChooseComponent(btnActivation, Properties.Resources.Game_Active, activation1);
-
-        private void btnInfo_Click(object sender, EventArgs e) => ChooseComponent(btnInfo, Properties.Resources.Info_Active, info1);
-
-        private void btnConnection_Click(object sender, EventArgs e) => ChooseComponent(btnConnection, Properties.Resources.CheckConn_Active, connection1);
-
         private void hideBtn_Click(object sender, EventArgs e)
         {
             if (Globals.m_CanCloseApp)
@@ -161,5 +156,11 @@ namespace Client.UI.Other
             Message m = Message.Create(base.Handle, 0xA1, new IntPtr(2), IntPtr.Zero);
             base.WndProc(ref m);
         }
+
+        private void btnActivation_Click(object sender, EventArgs e) => ChooseComponent(btnActivation, Properties.Resources.Game_Active, activation1);
+
+        private void btnInfo_Click(object sender, EventArgs e) => ChooseComponent(btnInfo, Properties.Resources.Info_Active, info1);
+
+        private void btnConnection_Click(object sender, EventArgs e) => ChooseComponent(btnConnection, Properties.Resources.CheckConn_Active, connection1);
     }
 }

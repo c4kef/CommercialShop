@@ -34,6 +34,10 @@ namespace Client.UI.Other
         {
             try
             {
+                InitializeComponent();
+
+                m_Instance = this;
+
                 Globals.PreparingInterface();
 
                 if (!File.Exists(Globals.m_pathToConfig))
@@ -41,10 +45,6 @@ namespace Client.UI.Other
                     MessageBox.Show(Globals.m_Interface.m_adminConfigNotFound);
                     Environment.Exit(0);
                 }
-
-                InitializeComponent();
-
-                m_Instance = this;
 
                 uiControls = new List<Control>();
                 transition = new BunifuTransition();

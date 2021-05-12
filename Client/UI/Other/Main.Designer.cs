@@ -32,19 +32,18 @@ namespace Client.UI.Other
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.FormBG = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.toolTip = new Bunifu.UI.WinForms.BunifuToolTip(this.components);
             this.userName = new Bunifu.UI.WinForms.BunifuLabel();
+            this.notify = new System.Windows.Forms.NotifyIcon(this.components);
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
             this.btnConnection = new Bunifu.UI.WinForms.BunifuImageButton();
             this.btnInfo = new Bunifu.UI.WinForms.BunifuImageButton();
             this.btnActivation = new Bunifu.UI.WinForms.BunifuImageButton();
             this.userImage = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.hideBtn = new Bunifu.UI.WinForms.BunifuSeparator();
+            this.awake1 = new Client.UI.Awake();
             this.activation1 = new Client.UI.Activation();
             this.info1 = new Client.UI.Info();
             this.connection1 = new Client.UI.Connection();
-            this.awake1 = new Client.UI.Awake();
-            this.notify = new System.Windows.Forms.NotifyIcon(this.components);
             this.bunifuPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userImage)).BeginInit();
             this.SuspendLayout();
@@ -53,41 +52,6 @@ namespace Client.UI.Other
             // 
             this.FormBG.ElipseRadius = 10;
             this.FormBG.TargetControl = this;
-            // 
-            // toolTip
-            // 
-            this.toolTip.Active = true;
-            this.toolTip.AlignTextWithTitle = false;
-            this.toolTip.AllowAutoClose = false;
-            this.toolTip.AllowFading = true;
-            this.toolTip.AutoCloseDuration = 5000;
-            this.toolTip.BackColor = System.Drawing.SystemColors.Control;
-            this.toolTip.BorderColor = System.Drawing.Color.Gainsboro;
-            this.toolTip.ClickToShowDisplayControl = false;
-            this.toolTip.ConvertNewlinesToBreakTags = true;
-            this.toolTip.DisplayControl = null;
-            this.toolTip.EntryAnimationSpeed = 350;
-            this.toolTip.ExitAnimationSpeed = 200;
-            this.toolTip.GenerateAutoCloseDuration = false;
-            this.toolTip.IconMargin = 6;
-            this.toolTip.InitialDelay = 0;
-            this.toolTip.Name = "toolTip";
-            this.toolTip.Opacity = 1D;
-            this.toolTip.OverrideToolTipTitles = false;
-            this.toolTip.Padding = new System.Windows.Forms.Padding(10);
-            this.toolTip.ReshowDelay = 100;
-            this.toolTip.ShowAlways = true;
-            this.toolTip.ShowBorders = false;
-            this.toolTip.ShowIcons = true;
-            this.toolTip.ShowShadows = true;
-            this.toolTip.Tag = null;
-            this.toolTip.TextFont = new System.Drawing.Font("Segoe UI", 9F);
-            this.toolTip.TextForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.toolTip.TextMargin = 2;
-            this.toolTip.TitleFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.toolTip.TitleForeColor = System.Drawing.Color.Black;
-            this.toolTip.ToolTipPosition = new System.Drawing.Point(0, 0);
-            this.toolTip.ToolTipTitle = null;
             // 
             // userName
             // 
@@ -106,9 +70,15 @@ namespace Client.UI.Other
             this.userName.Text = "...";
             this.userName.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.userName.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            this.toolTip.SetToolTip(this.userName, "");
-            this.toolTip.SetToolTipIcon(this.userName, null);
-            this.toolTip.SetToolTipTitle(this.userName, "");
+            // 
+            // notify
+            // 
+            this.notify.BalloonTipText = "Активатор скрыт в трей, Вы всегда можете его открыть и продолжить работу.";
+            this.notify.BalloonTipTitle = "Информация";
+            this.notify.Icon = ((System.Drawing.Icon)(resources.GetObject("notify.Icon")));
+            this.notify.Text = "Активатор";
+            this.notify.Visible = true;
+            this.notify.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notify_MouseDoubleClick);
             // 
             // bunifuPanel1
             // 
@@ -126,9 +96,6 @@ namespace Client.UI.Other
             this.bunifuPanel1.ShowBorders = true;
             this.bunifuPanel1.Size = new System.Drawing.Size(270, 54);
             this.bunifuPanel1.TabIndex = 3;
-            this.toolTip.SetToolTip(this.bunifuPanel1, "");
-            this.toolTip.SetToolTipIcon(this.bunifuPanel1, null);
-            this.toolTip.SetToolTipTitle(this.bunifuPanel1, "");
             // 
             // btnConnection
             // 
@@ -143,7 +110,7 @@ namespace Client.UI.Other
             this.btnConnection.ErrorImage = ((System.Drawing.Image)(resources.GetObject("btnConnection.ErrorImage")));
             this.btnConnection.FadeWhenInactive = false;
             this.btnConnection.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
-            this.btnConnection.Image = global::Client.Properties.Resources.CheckConn_Inactive;
+            this.btnConnection.Image = ((System.Drawing.Image)(resources.GetObject("btnConnection.Image")));
             this.btnConnection.ImageActive = null;
             this.btnConnection.ImageLocation = null;
             this.btnConnection.ImageMargin = 10;
@@ -159,10 +126,7 @@ namespace Client.UI.Other
             this.btnConnection.ShowSizeMarkers = false;
             this.btnConnection.Size = new System.Drawing.Size(40, 40);
             this.btnConnection.TabIndex = 7;
-            this.toolTip.SetToolTip(this.btnConnection, "...");
-            this.toolTip.SetToolTipIcon(this.btnConnection, null);
             this.btnConnection.ToolTipText = "";
-            this.toolTip.SetToolTipTitle(this.btnConnection, "");
             this.btnConnection.WaitOnLoad = false;
             this.btnConnection.Zoom = 10;
             this.btnConnection.ZoomSpeed = 10;
@@ -181,7 +145,7 @@ namespace Client.UI.Other
             this.btnInfo.ErrorImage = ((System.Drawing.Image)(resources.GetObject("btnInfo.ErrorImage")));
             this.btnInfo.FadeWhenInactive = false;
             this.btnInfo.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
-            this.btnInfo.Image = global::Client.Properties.Resources.Info_Inactive;
+            this.btnInfo.Image = ((System.Drawing.Image)(resources.GetObject("btnInfo.Image")));
             this.btnInfo.ImageActive = null;
             this.btnInfo.ImageLocation = null;
             this.btnInfo.ImageMargin = 10;
@@ -197,10 +161,7 @@ namespace Client.UI.Other
             this.btnInfo.ShowSizeMarkers = false;
             this.btnInfo.Size = new System.Drawing.Size(40, 40);
             this.btnInfo.TabIndex = 6;
-            this.toolTip.SetToolTip(this.btnInfo, "...");
-            this.toolTip.SetToolTipIcon(this.btnInfo, null);
             this.btnInfo.ToolTipText = "";
-            this.toolTip.SetToolTipTitle(this.btnInfo, "");
             this.btnInfo.WaitOnLoad = false;
             this.btnInfo.Zoom = 10;
             this.btnInfo.ZoomSpeed = 10;
@@ -219,7 +180,7 @@ namespace Client.UI.Other
             this.btnActivation.ErrorImage = ((System.Drawing.Image)(resources.GetObject("btnActivation.ErrorImage")));
             this.btnActivation.FadeWhenInactive = false;
             this.btnActivation.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
-            this.btnActivation.Image = global::Client.Properties.Resources.Game_Inactive;
+            this.btnActivation.Image = ((System.Drawing.Image)(resources.GetObject("btnActivation.Image")));
             this.btnActivation.ImageActive = null;
             this.btnActivation.ImageLocation = null;
             this.btnActivation.ImageMargin = 10;
@@ -235,10 +196,7 @@ namespace Client.UI.Other
             this.btnActivation.ShowSizeMarkers = false;
             this.btnActivation.Size = new System.Drawing.Size(40, 40);
             this.btnActivation.TabIndex = 5;
-            this.toolTip.SetToolTip(this.btnActivation, "...");
-            this.toolTip.SetToolTipIcon(this.btnActivation, null);
             this.btnActivation.ToolTipText = "";
-            this.toolTip.SetToolTipTitle(this.btnActivation, "");
             this.btnActivation.WaitOnLoad = false;
             this.btnActivation.Zoom = 10;
             this.btnActivation.ZoomSpeed = 10;
@@ -250,7 +208,7 @@ namespace Client.UI.Other
             this.userImage.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.userImage.AutoSizeHeight = true;
             this.userImage.BorderRadius = 37;
-            this.userImage.Image = global::Client.Properties.Resources.userImage;
+            this.userImage.Image = ((System.Drawing.Image)(resources.GetObject("userImage.Image")));
             this.userImage.IsCircle = true;
             this.userImage.Location = new System.Drawing.Point(269, 12);
             this.userImage.Name = "userImage";
@@ -258,9 +216,6 @@ namespace Client.UI.Other
             this.userImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.userImage.TabIndex = 1;
             this.userImage.TabStop = false;
-            this.toolTip.SetToolTip(this.userImage, "");
-            this.toolTip.SetToolTipIcon(this.userImage, null);
-            this.toolTip.SetToolTipTitle(this.userImage, "");
             this.userImage.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
             // 
             // hideBtn
@@ -277,10 +232,15 @@ namespace Client.UI.Other
             this.hideBtn.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
             this.hideBtn.Size = new System.Drawing.Size(23, 21);
             this.hideBtn.TabIndex = 0;
-            this.toolTip.SetToolTip(this.hideBtn, "...");
-            this.toolTip.SetToolTipIcon(this.hideBtn, null);
-            this.toolTip.SetToolTipTitle(this.hideBtn, "");
             this.hideBtn.Click += new System.EventHandler(this.hideBtn_Click);
+            // 
+            // awake1
+            // 
+            this.awake1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.awake1.Location = new System.Drawing.Point(132, 148);
+            this.awake1.Name = "awake1";
+            this.awake1.Size = new System.Drawing.Size(337, 189);
+            this.awake1.TabIndex = 7;
             // 
             // activation1
             // 
@@ -289,9 +249,6 @@ namespace Client.UI.Other
             this.activation1.Name = "activation1";
             this.activation1.Size = new System.Drawing.Size(337, 189);
             this.activation1.TabIndex = 4;
-            this.toolTip.SetToolTip(this.activation1, "");
-            this.toolTip.SetToolTipIcon(this.activation1, null);
-            this.toolTip.SetToolTipTitle(this.activation1, "");
             this.activation1.Visible = false;
             // 
             // info1
@@ -301,9 +258,6 @@ namespace Client.UI.Other
             this.info1.Name = "info1";
             this.info1.Size = new System.Drawing.Size(337, 189);
             this.info1.TabIndex = 6;
-            this.toolTip.SetToolTip(this.info1, "");
-            this.toolTip.SetToolTipIcon(this.info1, null);
-            this.toolTip.SetToolTipTitle(this.info1, "");
             this.info1.Visible = false;
             // 
             // connection1
@@ -313,30 +267,7 @@ namespace Client.UI.Other
             this.connection1.Name = "connection1";
             this.connection1.Size = new System.Drawing.Size(337, 189);
             this.connection1.TabIndex = 5;
-            this.toolTip.SetToolTip(this.connection1, "");
-            this.toolTip.SetToolTipIcon(this.connection1, null);
-            this.toolTip.SetToolTipTitle(this.connection1, "");
             this.connection1.Visible = false;
-            // 
-            // awake1
-            // 
-            this.awake1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.awake1.Location = new System.Drawing.Point(132, 148);
-            this.awake1.Name = "awake1";
-            this.awake1.Size = new System.Drawing.Size(337, 189);
-            this.awake1.TabIndex = 7;
-            this.toolTip.SetToolTip(this.awake1, "");
-            this.toolTip.SetToolTipIcon(this.awake1, null);
-            this.toolTip.SetToolTipTitle(this.awake1, "");
-            // 
-            // notify
-            // 
-            this.notify.BalloonTipText = "Активатор скрыт в трей, Вы всегда можете его открыть и продолжить работу.";
-            this.notify.BalloonTipTitle = "Информация";
-            this.notify.Icon = ((System.Drawing.Icon)(resources.GetObject("notify.Icon")));
-            this.notify.Text = "Активатор";
-            this.notify.Visible = true;
-            this.notify.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notify_MouseDoubleClick);
             // 
             // Main
             // 
@@ -368,19 +299,18 @@ namespace Client.UI.Other
         #endregion
 
         private Bunifu.Framework.UI.BunifuElipse FormBG;
-        private Bunifu.UI.WinForms.BunifuPictureBox userImage;
-        public Bunifu.UI.WinForms.BunifuToolTip toolTip;
-        public Bunifu.UI.WinForms.BunifuSeparator hideBtn;
+        public System.Windows.Forms.NotifyIcon notify;
         private Bunifu.UI.WinForms.BunifuPanel bunifuPanel1;
-        public Bunifu.UI.WinForms.BunifuLabel userName;
-        public Bunifu.UI.WinForms.BunifuImageButton btnActivation;
         public Bunifu.UI.WinForms.BunifuImageButton btnConnection;
         public Bunifu.UI.WinForms.BunifuImageButton btnInfo;
-        public System.Windows.Forms.NotifyIcon notify;
+        public Bunifu.UI.WinForms.BunifuImageButton btnActivation;
+        public Bunifu.UI.WinForms.BunifuLabel userName;
+        private Bunifu.UI.WinForms.BunifuPictureBox userImage;
+        public Bunifu.UI.WinForms.BunifuSeparator hideBtn;
+        public Awake awake1;
         public Activation activation1;
         public Info info1;
         public Connection connection1;
-        public Awake awake1;
     }
 }
 

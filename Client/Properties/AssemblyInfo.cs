@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("{store}")]
-[assembly: AssemblyDescription("Программа активатор аккаунтов для магазина {store}")]
+[assembly: AssemblyTitle("C4ke Store")]
+[assembly: AssemblyDescription("Программа активатор аккаунтов для частных магазинов. Сайт разработчика: www.c4ke.fun")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("C4ke developers")]
-[assembly: AssemblyProduct("DFGames")]
-[assembly: AssemblyCopyright("C4ke#0002 Copyright ©  2020-2021")]
+[assembly: AssemblyProduct("C4ke Store Activation")]
+[assembly: AssemblyCopyright("C4ke#0002 Copyright © 2020-2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

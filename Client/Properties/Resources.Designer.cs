@@ -85,7 +85,7 @@ namespace Client.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap fi_sr_angle_down {
             get {
-                object obj = ResourceManager.GetObject("fi-sr-angle-down", resourceCulture);
+                object obj = ResourceManager.GetObject("fi_sr_angle_down", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -95,7 +95,7 @@ namespace Client.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap fi_sr_cloud {
             get {
-                object obj = ResourceManager.GetObject("fi-sr-cloud", resourceCulture);
+                object obj = ResourceManager.GetObject("fi_sr_cloud", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -105,7 +105,7 @@ namespace Client.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap fi_sr_cloud_1 {
             get {
-                object obj = ResourceManager.GetObject("fi-sr-cloud-1", resourceCulture);
+                object obj = ResourceManager.GetObject("fi_sr_cloud_1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -115,7 +115,7 @@ namespace Client.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap fi_sr_signal_alt {
             get {
-                object obj = ResourceManager.GetObject("fi-sr-signal-alt", resourceCulture);
+                object obj = ResourceManager.GetObject("fi_sr_signal_alt", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -125,7 +125,7 @@ namespace Client.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap fi_sr_signal_alt_1 {
             get {
-                object obj = ResourceManager.GetObject("fi-sr-signal-alt-1", resourceCulture);
+                object obj = ResourceManager.GetObject("fi_sr_signal_alt_1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -135,7 +135,7 @@ namespace Client.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap fi_sr_signal_alt_2 {
             get {
-                object obj = ResourceManager.GetObject("fi-sr-signal-alt-2", resourceCulture);
+                object obj = ResourceManager.GetObject("fi_sr_signal_alt_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

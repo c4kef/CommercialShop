@@ -85,6 +85,7 @@ namespace Client.UI
             this.iconStore.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.iconStore.AutoSizeHeight = false;
             this.iconStore.BorderRadius = 0;
+            this.iconStore.Image = global::Client.Properties.Resources.Game_Active;
             this.iconStore.IsCircle = false;
             this.iconStore.Location = new System.Drawing.Point(134, 3);
             this.iconStore.Name = "iconStore";
