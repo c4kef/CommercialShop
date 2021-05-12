@@ -50,7 +50,7 @@ namespace Client.UI.Other.UIComps
                     {
                         string keyID = CSystem.RandomString(5, 5);
 
-                        //Globals.m_sqlRequests.GetAnswer($"INSERT INTO `KeysActivation`(`KeyActivation`, `Software`, `Date`, `Login`, `Password`, `Magazine`, `MLogin`, `MPass`, `MServ`) VALUES (\"{keyID}\", \"-\", \"-\", \"{Admin.GetInstance().a_Login}\", \"{Admin.GetInstance().a_Password}\", \"{Admin.GetInstance().a_Store}\", \"{Admin.GetInstance().a_MailLogin}\", \"{Admin.GetInstance().a_MailPassword}\", \"{Admin.GetInstance().a_MailServer}\")");
+                        Globals.m_sqlRequests.GetAnswer($"INSERT INTO `KeysActivation`(`KeyActivation`, `Software`, `Date`, `Login`, `Password`, `Magazine`, `MLogin`, `MPass`, `MServ`) VALUES (\"{keyID}\", \"-\", \"-\", \"{Admin.GetInstance().a_Login}\", \"{Admin.GetInstance().a_Password}\", \"{Admin.GetInstance().a_Store}\", \"{Admin.GetInstance().a_MailLogin}\", \"{Admin.GetInstance().a_MailPassword}\", \"{Admin.GetInstance().a_MailServer}\")");
                         File.AppendAllText(path, $"\nID Key: {keyID}    Login: {Admin.GetInstance().a_Login}   Password: {Admin.GetInstance().a_Password}");
 
                         percent = i + 1;
