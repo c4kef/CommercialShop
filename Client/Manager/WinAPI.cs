@@ -9,7 +9,6 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.ComponentModel;
 using Microsoft.Win32;
-using System.Security.Principal;
 using System.Security.Permissions;
 using System.Security;
 
@@ -242,8 +241,6 @@ namespace Client.Manager
         public static extern int NtQueryInformationProcess(SafeProcessHandle hProcess, PROCESSINFOCLASS pic, ref PROCESS_BASIC_INFORMATION pbi, uint cb, ref int pSize);
 
         #region Helpers
-
-        public static bool IsAdministrator => new WindowsPrincipal(WindowsIdentity.GetCurrent()).IsInRole(WindowsBuiltInRole.Administrator);
 
         [PermissionSet(SecurityAction.LinkDemand, Name = "FullTrust")]
         public static Process ElevateProcess(Process source)

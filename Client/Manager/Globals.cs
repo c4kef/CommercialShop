@@ -27,7 +27,7 @@ namespace Client.Manager
         public static SQLRequests m_sqlRequests;
 
         public static string m_versionServer = "Vers_2.0.0S";
-        public static string m_versionLanguage = "Vers_1.0.0R";
+        public static string m_versionLanguage;
         public static string m_linkServer = "https://darkdenuvo.online";
         public static string m_linkVersion = $"{Globals.m_linkServer}/version_check.php";
         public static string m_linkKeyCheck = $"{Globals.m_linkServer}/key_check.php";
@@ -115,6 +115,11 @@ namespace Client.Manager
 
         public static void InitLanguage()
         {
+            WebRequests wReq = new WebRequests(m_linkVersion);
+            wReq.Add("Version", "PacksLanguage");
+                
+            m_versionLanguage = wReq.Send();
+
             if (File.Exists(m_pathToLanguage) && File.ReadAllText(m_pathToLanguage).Contains(m_versionLanguage))
                 goto init;
 
