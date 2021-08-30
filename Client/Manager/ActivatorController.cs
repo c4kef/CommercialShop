@@ -307,16 +307,16 @@ namespace Client.Manager
 
                         m_procClient?.Kill();
 
-                        string[] stuff = File.ReadAllLines($@"{Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)}\Ubisoft Game Launcher\settings.yml");
+                        string[] stuff = File.ReadAllLines($@"{Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)}\Ubisoft Game Launcher\settings.yaml");
                         int min = 2;
                         int max = stuff.Length - 2;
                         for (int i = 0; i < stuff.Length; i++)
                             if (i >= min && i <= max)
                             {
-                                if (stuff[i].Contains("forceoffline") && stuff[i].Contains("false"))
-                                    stuff[i] = $"  forceoffline: true";
+                                if (stuff[i].Contains("offline") && stuff[i].Contains("false"))
+                                    stuff[i] = $"  offline: true";
                             }
-                        File.WriteAllLines($@"{Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)}\Ubisoft Game Launcher\settings.yml", stuff);
+                        File.WriteAllLines($@"{Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)}\Ubisoft Game Launcher\settings.yaml", stuff);
                         Thread.Sleep(500);
                         Process.GetProcessesByName("upc")[0].Kill();
                         break;
@@ -393,13 +393,13 @@ namespace Client.Manager
 
                                 WinAPI.SafeDeleteDirs($@"{folderPath}\cache");
 
-                                string[] stuff = File.ReadAllLines($@"{Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)}\Ubisoft Game Launcher\settings.yml");
+                                string[] stuff = File.ReadAllLines($@"{Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)}\Ubisoft Game Launcher\settings.yaml");
                                 int min = 0;
                                 int max = stuff.Length;
                                 for (int i = 0; i < stuff.Length; i++)
                                     if (i >= min && i <= max)
                                     {
-                                        if (stuff[i].Contains("synucsavegames"))
+                                        if (stuff[i].Contains("syncsavegames"))
                                             stuff[i] = $"  syncsavegames: false";
                                         else if (stuff[i].Contains("spotlight"))
                                             stuff[i + 1] = $"  enabled: false";
@@ -410,8 +410,7 @@ namespace Client.Manager
                                         else if (stuff[i].Contains("password:"))
                                             stuff[i] = $"  password: \"\"";
                                     }
-
-                                File.WriteAllLines($@"{Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)}\Ubisoft Game Launcher\settings.yml", stuff);
+                                File.WriteAllLines($@"{Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)}\Ubisoft Game Launcher\settings.yaml", stuff);
 
                                 Process.Start(path);
 
